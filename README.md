@@ -22,7 +22,23 @@ In this repository will be using Python3. Create a repository, go inside and run
 ```
 serverless create --template aws-python3
 ```
+
+Installing *serverless-python-requirements plugin*. A Serverless v1.x plugin to automatically bundle dependencies from requirements.txt and make them available in your PYTHONPATH.:
+```
+sls plugin install -n serverless-python-requirements
+```
+Installing *serverless-dotenv-plugin*. Preload environment variables into serverless. Use this plugin if you have variables stored in a .env file that you want loaded into your serverless yaml config.:
+```
+npm i -D serverless-dotenv-plugin
+```
+
+
 Deployment
 ```
 serverless deploy
+```
+
+**Testing function locally**
+```
+serverless invoke local -f function_name
 ```

@@ -33,11 +33,11 @@ provider:
     - Effect: "Allow"
       Action:
         - "s3:GetObject"
-      Resource: "arn:aws:s3:::ml-sls-deploy-prd"
+      Resource: "arn:aws:s3:::ml-sls-deploy-prd/*"
     - Effect: "Allow"
       Action:
         - "s3:PutObject"
-      Resource: "arn:aws:s3:::ml-sls-deploy-prd-results"
+      Resource: "arn:aws:s3:::ml-sls-deploy-prd-results/*"
 
 # you can define service wide environment variables here
 #  environment:
@@ -54,7 +54,7 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: handler.lambda_handler
     name: ${self:service}-${self:provider.stage}
     description: Run ML model for forecasting
     environment:
@@ -120,10 +120,9 @@ package:
 plugins:
   - serverless-dotenv-plugin
   - serverless-python-requirements
-
 custom:
   pythonRequirements:
-    dockerizePip: non-linux
-    slim: true
-    zip: true
-    strip: false
+    dockerizePip: non-linux  # Compiling non-pure-Python modules or fetching their manylinux wheels is supported on non-linux OSs via the use of Docker and the docker-lambda image.
+    zip: true # To help deal with potentially large dependencies (for example: numpy, scipy and scikit-learn) there is support for compressing the libraries.
+    slim: true # To remove the tests, information and caches from the installed packages.
+    strip: false # In some cases, stripping binaries leads to problems like "ELF load command address/offset not properly aligned", even when done in the Docker environment

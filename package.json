@@ -16,7 +16,8 @@
     "url": "https://github.com/DanielDaCosta/ml-production-deploy/issues"
   },
   "homepage": "https://github.com/DanielDaCosta/ml-production-deploy#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "serverless-dotenv-plugin": "^2.4.2",
     "serverless-python-requirements": "^5.1.0"
   }
