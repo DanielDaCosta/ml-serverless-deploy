@@ -33,11 +33,11 @@ provider:
     - Effect: "Allow"
       Action:
         - "s3:GetObject"
-      Resource: "*"
+      Resource: "arn:aws:s3:::ml-sls-deploy-prd"
     - Effect: "Allow"
       Action:
         - "s3:PutObject"
-      Resource: "*"
+      Resource: "arn:aws:s3:::ml-sls-deploy-prd-results"
 
 # you can define service wide environment variables here
 #  environment:
@@ -60,6 +60,9 @@ functions:
     environment:
       READ_BUCKET: ${env:READ_BUCKET}
       WRITE_BUCKET: ${env:WRITE_BUCKET}
+      READ_DATA_PATH: ${env:READ_DATA_PATH}
+      READ_MODELS_PATH: ${env:READ_MODELS_PATH}
+      WRITE_DATA_PATH: ${env:WRITE_DATA_PATH}
     events:
       - schedule: cron(0 11 ? * MON *)
 #    The following are a few example events you can configure

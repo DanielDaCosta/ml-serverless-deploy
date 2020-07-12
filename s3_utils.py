@@ -1,6 +1,6 @@
 import boto3
-import joblib
 import pandas as pd
+import joblib
 import os
 from tempfile import mkstemp
 

@@ -13,12 +13,16 @@ The model file will also be stored inside a S3 bucket. Since the model file can 
 
 # Usage
 
-In this repository will be using Python3.
+Installing Serverless Framework
+
+```
+npm install -g serverless
+```
+In this repository will be using Python3. Create a repository, go inside and run the following command:
 ```
 serverless create --template aws-python3
 ```
 Deployment
-
 ```
 serverless deploy
 ```

@@ -15,6 +15,15 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+*.pyc
+*.py[cod]
+__pycache__/
+.vscode/
+.pkl
+.DS_Store
 
 # Serverless directories
 .serverless
+node_modules/
+venv/
+.requirements.zip
