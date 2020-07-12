@@ -1,0 +1,23 @@
+{
+  "name": "ml-production-deploy",
+  "version": "1.0.0",
+  "description": "Deploying Machine Learning models on AWS using Serverless Framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielDaCosta/ml-production-deploy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielDaCosta/ml-production-deploy/issues"
+  },
+  "homepage": "https://github.com/DanielDaCosta/ml-production-deploy#readme",
+  "dependencies": {
+    "serverless-dotenv-plugin": "^2.4.2",
+    "serverless-python-requirements": "^5.1.0"
+  }
+}
