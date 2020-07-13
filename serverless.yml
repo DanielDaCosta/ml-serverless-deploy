@@ -116,6 +116,7 @@ package:
     - .gitignore
     - README.MD
     - .DS_Store
+    - Images/**
 
 plugins:
   - serverless-dotenv-plugin
