@@ -46,6 +46,38 @@ Deployment
 ```
 serverless deploy
 ```
+## Code
+The model used is an energy forecasting model using XGboost. The dataset consists of hourly energy consumption rates in kWh for an industrial utility. You can check more about it in [here](https://github.com/DanielDaCosta/energy-forecast).
+
+The model has a *forecasting horizon* (The number of time periods to forecast into the future) of 1 hour.
+
+The model inputs are stored in s3 Bucket. It consists of the model inputs parameter of the last hour. The parameters are:
+- hour
+- weekday 
+- dayofyear
+- is_weekend
+- weekofyear
+- month
+- season
+- shift
+- lag_1
+- lag_8
+- lag_25
+
+Having energy forecast as output.
+
+### Inputs
+The inputs are saved in an s3 bucket as a *.csv*
+
+### Model
+The XGboost model is saved as *.sav* in s3
+
+### Results
+The results are also stored in s3 as a *.csv*
+
+## Code Pipeline
+
+CloudWatch trigger (every hour) -> Read Inputs -> Read Model -> Prediction -> Save Model
 
 ## Testing function locally
 ```
