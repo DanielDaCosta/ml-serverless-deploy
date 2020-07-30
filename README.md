@@ -67,12 +67,15 @@ The model inputs are stored in s3 Bucket. It consists of the model inputs parame
 Having energy forecast as output.
 
 **Inputs**
+
 The inputs are saved in an s3 bucket as a *.csv*
 
 **Model**
+
 The XGboost model is saved as *.sav* in s3
 
 **Results**
+
 The results are also stored in s3 as a *.csv*
 
 ### Code Pipeline
