@@ -5,6 +5,9 @@ In this repository we'll be building the following architecture:
 
 ![schema](Images/Schema_ML_Serverless.png "Schema Architecture")
 
+
+Don't forget to set up your aws credentials using *aws cli*.
+
 # Details
 
 The input data will be stored in a S3 bucket, in our case the csv file. 
