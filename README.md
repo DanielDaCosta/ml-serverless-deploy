@@ -81,7 +81,7 @@ The XGboost model is saved as *.sav* in s3
 
 The results are also stored in s3 as a *.csv*
 
-### Code Pipeline
+### Pipeline
 
 CloudWatch trigger (every hour) -> Read Inputs -> Read Model -> Prediction -> Save Model
 
