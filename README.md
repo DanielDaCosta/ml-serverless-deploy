@@ -1,4 +1,4 @@
-# ml-production-deploy
+# ml-serverless-deploy
 Deploying Machine Learning models on AWS using Serverless Framework.
 
 In this repository we'll be building the following architecture:
